@@ -3,8 +3,8 @@ import Inert from 'inert';
 
 const server = new Server();
 server.connection({
-    host: 'localhost',
-    port: 8080
+    host: process.env.IP || 'localhost',
+    port: process.env.PORT || 8080
 });
 
 let staticRoute = {
@@ -16,7 +16,7 @@ let staticRoute = {
             index: ['index.html']
         }
     }
-}
+};
 
 let plugins = [ Inert ];
 let routes = [ staticRoute ];
