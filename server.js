@@ -23,8 +23,8 @@ let routes = [ staticRoute ];
 
 server.register( plugins,
     error => {
-        server.route(routes);
         if (error) return console.error(error);
+        server.route(routes);
         server.start(() => console.log('Server running at:', server.info.uri));
     }
 );
